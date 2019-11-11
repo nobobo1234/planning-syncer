@@ -41,6 +41,8 @@ def main():
 
     current_day = datetime.today() - timedelta(days=datetime.today().weekday())
     for day in day_values:
+       if not hasattr(day, 'values'):
+           continue
        for values in day['values']:
            date_time = values[0].split(' - ')
            start = date_time[0].split(':')
